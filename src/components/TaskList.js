@@ -1,11 +1,23 @@
 import React from "react";
+import Task from "./Task";
+function TaskList({tasks, idx}) {
 
-function TaskList() {
+  const myTasks= tasks.map(task => 
+      <Task 
+        text = {task.text}       
+         category = {task.category}
+        key = {idx}
+      />
+  )
+
+
   return (
     <div className="tasks">
-      {/* display a list of tasks using Task component */}
+      {myTasks}
+      
     </div>
   );
+  
 }
 
 export default TaskList;
