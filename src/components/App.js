@@ -9,10 +9,13 @@ console.log({ CATEGORIES, TASKS });
 
 function App() {
 
-  const [task, setTask] = useState(TASKS)
+  const [tasks, setTask] = useState(TASKS)
 
   function updateTasks(selectedTask) {
     console.log(selectedTask)
+    const updateTaskList = tasks.filter(task => task.id !== selectedTask)
+    console.log(updateTaskList)
+    setTask(updateTaskList)
   }
 
   return (
@@ -21,7 +24,8 @@ function App() {
       <CategoryFilter />
       <NewTaskForm />
       <TaskList
-      tasks = {TASKS} />
+      tasks = {TASKS}
+      getTask = {updateTasks} />
     </div>
   );
 }

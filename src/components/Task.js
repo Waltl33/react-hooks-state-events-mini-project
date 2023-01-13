@@ -2,10 +2,10 @@ import React from "react";
 // import TaskList from "./TaskList";
 
 
-function Task({text, category}) {
+function Task({text, category, getNewTask}) {
 
 function handleDelete(){
-  
+  getNewTask(text)
  
 }
   return (
