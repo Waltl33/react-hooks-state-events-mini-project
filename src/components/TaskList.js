@@ -4,7 +4,7 @@ import Task from "./Task";
 
 
 
-function TaskList(tasks, idx) {
+function TaskList({tasks, idx}) {
   
   const myTasks = tasks.map(tasks => 
     <Task
@@ -13,11 +13,12 @@ function TaskList(tasks, idx) {
       key = {idx}
     />
   )
+  
 
   
   return (
     <div className="tasks">
-      {/* {tasks.map(tasks => {tasks}) */}
+      {myTasks}
     </div>
   );
 }
