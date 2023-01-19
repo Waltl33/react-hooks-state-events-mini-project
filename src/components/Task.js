@@ -2,8 +2,8 @@ import React from "react";
 
 function Task({task, getNewTask}) {
 
-  function handleDelete() {
-      getNewTask(task.text)
+  const handleDelete = () => {
+    getNewTask(task);
   }
   return (
     <div className="task">

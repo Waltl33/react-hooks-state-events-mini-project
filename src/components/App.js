@@ -10,11 +10,11 @@ console.log({ CATEGORIES, TASKS });
 function App() {
   const [task, setTask] = useState(TASKS)
 
-  function updateTasks(selectedTask) {
-const updateTasksList = task.filter(task => selectedTask.id !== task.text)
-setTask(updateTasksList)
-  }
-  
+
+  const handleDeleteTask = (deletedTask) => {
+    const filteredTasks = task.filter(task => deletedTask.text !== task.text)
+    setTask(filteredTasks) 
+   }
 
   
   return (
@@ -25,7 +25,7 @@ setTask(updateTasksList)
       <TaskList 
         tasks = {TASKS}
         categories = {CATEGORIES}
-        getTask = {updateTasks}
+        getTask = {handleDeleteTask}
       />
     </div>
   );
