@@ -8,11 +8,11 @@ console.log("Here's the data you're working with");
 console.log({ CATEGORIES, TASKS });
 
 function App() {
-  const [task, setTask] = useState(TASKS)
+  const [tasks, setTask] = useState(TASKS)
 
 
   const handleDeleteTask = (deletedTask) => {
-    const filteredTasks = task.filter(task => deletedTask.text !== task.text)
+    const filteredTasks = tasks.filter(task => deletedTask.text !== task.text)
     setTask(filteredTasks) 
    }
 
@@ -25,7 +25,7 @@ function App() {
       <TaskList 
         tasks = {TASKS}
         categories = {CATEGORIES}
-        getTask = {handleDeleteTask}
+        handleDeleteTask = {handleDeleteTask}
       />
     </div>
   );
