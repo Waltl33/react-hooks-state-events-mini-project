@@ -9,6 +9,7 @@ console.log({ CATEGORIES, TASKS });
 
 function App() {
   const [tasks, setTask] = useState(TASKS)
+  const [category, setCategory] = useState("All")
 
 
   const handleDeleteTask = (deletedTask) => {
@@ -16,15 +17,20 @@ function App() {
     setTask(filteredTasks) 
    }
 
-  
+  function selectedCategory(category){
+    setCategory(category)
+  }
   return (
     <div className="App">
       <h2>My tasks</h2>
-      <CategoryFilter />
+      <CategoryFilter 
+        categories = {CATEGORIES}
+        getCategory = {selectedCategory}
+        
+      />
       <NewTaskForm />
       <TaskList 
-        tasks = {TASKS}
-        categories = {CATEGORIES}
+        tasks = {tasks}
         handleDeleteTask = {handleDeleteTask}
       />
     </div>
