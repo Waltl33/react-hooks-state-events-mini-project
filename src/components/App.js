@@ -8,6 +8,13 @@ console.log("Here's the data you're working with");
 console.log({ CATEGORIES, TASKS });
 
 function App() {
+  const [task, setTask] = useState(TASKS)
+
+  function updateTasks(selectedTask) {
+const updateTasksList = task.filter(task => selectedTask.id !== task.text)
+setTask(updateTasksList)
+  }
+  
 
   
   return (
@@ -18,6 +25,7 @@ function App() {
       <TaskList 
         tasks = {TASKS}
         categories = {CATEGORIES}
+        getTask = {updateTasks}
       />
     </div>
   );
